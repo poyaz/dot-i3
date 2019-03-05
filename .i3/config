@@ -80,7 +80,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -191,6 +191,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
+for_window [class="URxvt"] border normal
+for_window [class="XTerm"] border normal
+for_window [class="Xft"] border normal
+for_window [title="Chromium"] border none
+for_window [title="PhpStorm"] border none
+
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
@@ -274,6 +280,7 @@ mode "resize" {
 
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+l exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -429,3 +436,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id setxkbmap -layout us,ir -option "grp:lalt_lshift_toggle"
 exec --no-startup-id setxkbmap -layout us,ir -option "grp:ralt_rshift_toggle"
 exec --no-startup-id kbdd
+
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/pooya/.i3/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/pooya/.i3/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/pooya/.i3/workspace-2.json'"
