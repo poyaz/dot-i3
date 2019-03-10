@@ -104,6 +104,7 @@ bindsym $mod+Shift+Right move right
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
+bindsym Mod1+Tab workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
@@ -196,6 +197,9 @@ for_window [class="XTerm"] border normal
 for_window [class="Xft"] border normal
 for_window [title="Chromium"] border none
 for_window [title="PhpStorm"] border none
+for_window [title="DataGrip"] border none
+for_window [class="Pcmanfm"] floating enable resize set 900 600
+for_window [title="LibreOffice"] floating enable resize set 900 600
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
