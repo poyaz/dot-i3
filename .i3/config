@@ -28,6 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
+bindsym $mod+Shift+Return exec terminal -name floating-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -200,6 +201,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 for_window [class="URxvt"] border normal
 for_window [class="XTerm"] border normal
 for_window [class="Xft"] border normal
+for_window [instance="floating-terminal"] floating enable
 for_window [title="Chromium"] border none
 for_window [title="PhpStorm"] border none
 for_window [title="DataGrip"] border none
@@ -462,9 +464,10 @@ bindsym $mod+Shift+p exec keepassxc
 bindsym $mod+Shift+t mode "t"
 mode "t" {
 	bindsym t exec bash /home/pooya/Projects/self/bash-cheat/teleport/tsh-login.sh -a -d ~/.passwords/ompfinex.kdbx -e "/KeePassXC-Browser Passwords/tp.ompfinex.tech" -- tsh --proxy=\\\tsh-proxy --auth=\\\tsh-auth --user=\\\UserName login \\\tsh-cluster; mode "default"
-	bindsym k exec i3-sensible-terminal --hold -e bash /home/pooya/Projects/self/bash-cheat/teleport/tsh-login.sh -a -d ~/.passwords/ompfinex.kdbx -e "/KeePassXC-Browser Passwords/tp.ompfinex.tech" -- tsh --proxy=\\\tsh-proxy --auth=\\\tsh-auth --user=\\\UserName proxy kube --cluster=\\\tsh-cluster \\\tsh-kube-cluster -p 8443; mode "default"
+	bindsym k exec i3-sensible-terminal -name teleport-kube -title teleport-kube --hold -e bash /home/pooya/Projects/self/bash-cheat/teleport/tsh-login.sh -a -d ~/.passwords/ompfinex.kdbx -e "/KeePassXC-Browser Passwords/tp.ompfinex.tech" -- tsh --proxy=\\\tsh-proxy --auth=\\\tsh-auth --user=\\\UserName proxy kube --cluster=\\\tsh-cluster \\\tsh-kube-cluster -p 8443; mode "default"
 	bindsym Return mode "default"
 }
+
 
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/pooya/.i3/workspace-1.json'"
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/pooya/.i3/workspace-2.json'"
