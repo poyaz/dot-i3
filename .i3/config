@@ -468,6 +468,7 @@ mode "t" {
 	bindsym Return mode "default"
 }
 
+include ~/.i3/custom/*.conf
 
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/pooya/.i3/workspace-1.json'"
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/pooya/.i3/workspace-2.json'"
